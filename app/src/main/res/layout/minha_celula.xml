@@ -10,23 +10,28 @@
         android:id="@+id/meuIcone"
         android:layout_width="149dp"
         android:layout_height="196dp"
+        android:layout_marginStart="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/felpudo"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/meuTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintStart_toEndOf="@+id/meuIcone"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="175dp"
-        tools:layout_editor_absoluteY="77dp" />
+        app:layout_constraintStart_toEndOf="@+id/meuIcone"
+        app:layout_constraintTop_toBottomOf="@+id/meuTitulo" />
 </android.support.constraint.ConstraintLayout>
