@@ -17,24 +17,29 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    String [] listaNomes = {"Felpudo", "Fofura", "Lesmo"};
+    String [] listaNomes = {"Felpudo", "Fofura", "Lesmo", "Bugado", "Uruca", "Racing", "iOS", "Android", "RealidadeAumentada",
+    "Sound FX", "3D Studio Max", "Games"};
+
+    int[] listaIcones = {R.drawable.felpudo, R.drawable.fofura, R.drawable.lesmo, R.drawable.bugado, R.drawable.uruca, R.drawable.felpudo, R.drawable.ios, R.drawable.android, R.drawable.realidade_aumentada,
+            R.drawable.sound_fx, R.drawable.games, R.drawable.games};
+
+    String[] listaDescricao = {"","","","","","","","","","","",""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayAdapter<String> meuAdaptador = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, android.R.id.text1, listaNomes);
-
         ListView minhaLista = findViewById(R.id.minhaLista);
-        minhaLista.setAdapter(meuAdaptador);
+        MeuAdaptador meuAdaptador = new MeuAdaptador(getApplicationContext(), R.layout.minha_celula);
+        int i = 0;
 
-        minhaLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, ""+position, Toast.LENGTH_SHORT).show();
-            }
-        });
+        for(String nome: listaNomes) {
+            DadosPersonagem dadosPersonagem = new DadosPersonagem(listaIcones[i], nome, listaDescricao[i]);
+            meuAdaptador.add(dadosPersonagem);
+            i++;
+        }
+        minhaLista.setAdapter(meuAdaptador);
     }
 }
 
