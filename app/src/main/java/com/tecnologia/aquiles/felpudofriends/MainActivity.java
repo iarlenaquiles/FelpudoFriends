@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
     String [] listaNomes = {"Felpudo", "Fofura", "Lesmo", "Bugado", "Uruca", "Racing", "iOS", "Android", "RealidadeAumentada",
     "Sound FX", "3D Studio Max", "Games"};
 
-    int[] listaIcones = {R.drawable.felpudo, R.drawable.fofura, R.drawable.lesmo, R.drawable.bugado, R.drawable.uruca, R.drawable.felpudo, R.drawable.ios, R.drawable.android, R.drawable.realidade_aumentada,
-            R.drawable.sound_fx, R.drawable.games, R.drawable.games};
+    int[] listaIcones = {R.drawable.felpudo, R.drawable.fofura, R.drawable.lesmo, R.drawable.bugado, R.drawable.uruca, R.drawable.carrinho, R.drawable.ios, R.drawable.android, R.drawable.realidade_aumentada,
+            R.drawable.sound_fx, R.drawable.max, R.drawable.games};
 
     String[] listaDescricao = {"","","","","","","","","","","",""};
 
