@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,12 +35,12 @@ public class MainActivity extends AppCompatActivity {
 
 class DadosPersonagem {
     private int icone;
-    private String nome;
+    private String titulo;
     private String descricao;
 
-    public DadosPersonagem(int icone, String nome, String descricao) {
+    public DadosPersonagem(int icone, String titulo, String descricao) {
         this.icone = icone;
-        this.nome = nome;
+        this.titulo = titulo;
         this.descricao = descricao;
     }
 
@@ -46,11 +48,17 @@ class DadosPersonagem {
         return icone;
     }
 
-    public String getNome() {
-        return nome;
+    public String getTitulo() {
+        return titulo;
     }
 
     public String getDescricao() {
         return descricao;
     }
+}
+
+class ViewPersonagem{
+    ImageView icone;
+    TextView titulo;
+    TextView descricao;
 }
