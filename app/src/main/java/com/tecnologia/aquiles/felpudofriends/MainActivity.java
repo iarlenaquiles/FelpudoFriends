@@ -1,8 +1,10 @@
 package com.tecnologia.aquiles.felpudofriends;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -44,9 +46,32 @@ public class MainActivity extends AppCompatActivity {
         minhaLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
+
             }
         });
+    }
+
+    void criaAlerta() {
+        AlertDialog.Builder meuAlerta = new AlertDialog.Builder(MainActivity.this);
+        meuAlerta.setTitle("");
+        meuAlerta.setMessage("");
+        meuAlerta.setCancelable(true);
+        meuAlerta.setIcon(R.drawable.android);
+
+        meuAlerta.setPositiveButton("Confirma", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "Clicou em confirma", Toast.LENGTH_SHORT).show();
+            }
+        });
+        meuAlerta.setNegativeButton("Cancela", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(MainActivity.this, "Clicou em cancelar", Toast.LENGTH_SHORT).show();
+            }
+        });
+        meuAlerta.create();
+        meuAlerta.show();
     }
 }
 
