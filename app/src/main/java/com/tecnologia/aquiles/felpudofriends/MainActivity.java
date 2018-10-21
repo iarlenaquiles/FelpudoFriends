@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView minhaLista = findViewById(R.id.minhaLista);
-        MeuAdaptador meuAdaptador = new MeuAdaptador(getApplicationContext(), R.layout.minha_celula);
+        final MeuAdaptador meuAdaptador = new MeuAdaptador(getApplicationContext(), R.layout.minha_celula);
         int i = 0;
 
         for(String nome: listaNomes) {
@@ -46,17 +46,18 @@ public class MainActivity extends AppCompatActivity {
         minhaLista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
+                DadosPersonagem dadosPersonagem = (DadosPersonagem) meuAdaptador.getItem(position);
+                criaAlerta(dadosPersonagem);
             }
         });
     }
 
-    void criaAlerta() {
+    void criaAlerta(DadosPersonagem dadosPersonagem) {
         AlertDialog.Builder meuAlerta = new AlertDialog.Builder(MainActivity.this);
-        meuAlerta.setTitle("");
-        meuAlerta.setMessage("");
+        meuAlerta.setTitle(dadosPersonagem.getTitulo());
+        meuAlerta.setMessage(dadosPersonagem.getDescricao());
         meuAlerta.setCancelable(true);
-        meuAlerta.setIcon(R.drawable.android);
+        meuAlerta.setIcon(dadosPersonagem.getIcone());
 
         meuAlerta.setPositiveButton("Confirma", new DialogInterface.OnClickListener() {
             @Override
